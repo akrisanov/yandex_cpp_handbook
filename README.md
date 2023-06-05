@@ -3,7 +3,7 @@
 ## Building an app
 
 ```shell
-clang++ 1.2_hello.cpp -o hello
+clang++ --std=c++20 -O3 -fsanitize=address,undefined -Wall -Wextra -Werror 1.2.1_hello.cpp -o hello
 ```
 
 If we ommit the `-o` flag, the compiler will create an output file with the name `a.out`.
