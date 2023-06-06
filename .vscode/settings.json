@@ -6,6 +6,7 @@
         "**/requirements{/**,*}.{txt,in}": "pip-requirements",
         ".env": "properties",
         ".env.example": "properties",
-        "ostream": "cpp"
+        "ostream": "cpp",
+        "cstdint": "cpp"
     }
 }

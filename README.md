@@ -7,3 +7,9 @@ clang++ --std=c++20 -O3 -fsanitize=address,undefined -Wall -Wextra -Werror 1.2.1
 ```
 
 If we ommit the `-o` flag, the compiler will create an output file with the name `a.out`.
+
+## Reading a file as an input
+
+```shell
+./a.out < input.txt
+```
