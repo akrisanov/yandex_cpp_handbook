@@ -36,5 +36,8 @@ int main()
         leap_year = false;
     }
 
+    // more consice version
+    // => leap_year = ((year % 400 == 0 || year % 100 != 0) && year % 4 == 0);
+
     std::cout << (leap_year ? "YES" : "NO") << "\n";
 }
