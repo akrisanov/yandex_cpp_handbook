@@ -16,23 +16,17 @@
 #include <iostream>
 #include <cctype>
 
-int main()
+bool is_good(const std::string &password)
 {
-    std::string password;
-    std::getline(std::cin, password);
-
-    bool is_valid = true;
-    int upper = 0, lower = 0, digit = 0, other = 0;
-
     if (password.size() < 8 || password.size() > 14)
-        is_valid = false;
+        return false;
 
+    int upper = 0, lower = 0, digit = 0, other = 0;
     for (char c : password)
     {
         if (c < 33 || c > 126)
         {
-            is_valid = false;
-            break;
+            return false;
         }
 
         if (std::isupper(c))
@@ -45,8 +39,12 @@ int main()
             other = 1;
     }
 
-    if (upper + lower + digit + other < 3)
-        is_valid = false;
+    return (upper + lower + digit + other >= 3);
+}
 
-    std::cout << (is_valid ? "YES" : "NO") << std::endl;
+int main()
+{
+    std::string password;
+    std::getline(std::cin, password);
+    std::cout << (is_good(password) ? "YES" : "NO") << std::endl;
 }
